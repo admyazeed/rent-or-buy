@@ -123,7 +123,7 @@ function App() {
           <p className="eyebrow">Your result</p>
           <h1>{recommendation.recommendation}</h1>
           <p className="summary-text">
-            Your score was <strong>{recommendation.score}</strong>.
+            Your recommendation is based on the responses you provided throughout the questionnaire. The factors below explain how each of your answers influenced the overall result, highlighting the considerations that most strongly support renting or buying in your current circumstances.
           </p>
 
           <div className="results-list">
@@ -158,7 +158,7 @@ function App() {
         <p className="eyebrow">Rent or Buy</p>
         <h1>Find the option that suits you best</h1>
         <p className="intro-text">
-          Answer each question one by one. We will show you a simple recommendation at the end.
+          Answer the following questions to receive a personalized recommendation on whether renting or buying may be a better fit for your current circumstances.
         </p>
 
         <div className="progress-bar" aria-label="Question progress">
