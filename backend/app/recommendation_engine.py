@@ -1,14 +1,20 @@
 from data.questions import QUESTIONS
+from models.request import RecommendationRequest
+from models.recommendation import (
+    RecommendationFactor,
+    RecommendationResponse,
+)
 
 
-def get_recommendation(answers):
-    # Build lookup tables for O(1) access
+def get_recommendation(
+    request: RecommendationRequest,
+) -> RecommendationResponse:
     question_lookup = {q.id: q for q in QUESTIONS}
 
     score = 0
-    factors = []
+    factors: list[RecommendationFactor] = []
 
-    for answer in answers:
+    for answer in request.answers:
         question = question_lookup.get(answer.question_id)
 
         if question is None:
@@ -27,13 +33,11 @@ def get_recommendation(answers):
         score += response.weight
 
         factors.append(
-            {
-                "category": question.category,
-                "question": question.text,
-                "selected_response": response.text,
-                "weight": response.weight,
-                "explanation": response.explanation,
-            }
+            RecommendationFactor(
+                category=question.category,
+                weight=response.weight,
+                explanation=response.explanation,
+            )
         )
 
     if score >= 10:
@@ -43,8 +47,8 @@ def get_recommendation(answers):
     else:
         recommendation = "Either"
 
-    return {
-        "recommendation": recommendation,
-        "score": score,
-        "factors": factors,
-    }
+    return RecommendationResponse(
+        recommendation=recommendation,
+        score=score,
+        factors=factors,
+    )
