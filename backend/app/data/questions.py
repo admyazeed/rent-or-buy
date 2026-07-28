@@ -1,4 +1,4 @@
-from models.question import Question, ResponseOption
+from ..models.question import Question, ResponseOption
 
 QUESTIONS = [
     Question(

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from routers.questionnaire import router
+from .routers.questionnaire import router
 
 app = FastAPI()
 

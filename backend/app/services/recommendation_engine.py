@@ -1,6 +1,6 @@
-from data.questions import QUESTIONS
-from models.request import RecommendationRequest
-from models.recommendation import (
+from ..data.questions import QUESTIONS
+from ..models.request import RecommendationRequest
+from ..models.recommendation import (
     RecommendationFactor,
     RecommendationResponse,
 )
