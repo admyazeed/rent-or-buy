@@ -1,6 +1,6 @@
 # Rent or Buy
 
-Rent or Buy is a small full-stack questionnaire that helps someone think through whether renting or buying a home may better fit their current circumstances. It is designed as a portfolio project demonstrating a React frontend, a FastAPI backend, typed request/response models, and a focused recommendation service.
+Rent or Buy is a small full-stack questionnaire that helps someone think through whether renting or buying a home may better fit their current circumstances.
 
 The app asks 10 questions about factors such as length of stay, income stability, savings, and mobility. Each answer contributes a positive or negative weight. The final result includes the recommendation, total score, and an explanation for each answer.
 
